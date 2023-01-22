@@ -6,17 +6,11 @@ import io.ktor.server.application.*
 
 fun Route.getWhoRoute() {
     get("/who/{id}") {
-
+        call.respondText("in WhoRoutes.routes.getWhoAllRoute()")
     }
 }
 fun Route.getWhoAllRoute() {
     get("/whoall/") {
-
+        call.respondText("in WhoRoutes.routes.getWhoAllRoute()")
     }
 }
-/*
-fun Route.totalizeOrderRoute() {
-    get("/order/{id}/total") {
-
-    }
-}*/

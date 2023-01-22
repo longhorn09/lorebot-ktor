@@ -1,21 +1,23 @@
 package com.normstorm.routes
 
 import io.ktor.server.routing.*
-//import io.ktor.server.response.*
-import io.ktor.server.application.*
 import io.ktor.server.response.*
+import io.ktor.server.application.*
+import kotlinx.serialization.Serializable
 
-fun Application.configureQueryRouting() {
+
+fun Application.configureBriefRouting() {
     routing {
-        queryByIdRoute()
+        briefByIdRoute()
     }
 }
-fun Route.queryByIdRoute() {
+
+fun Route.briefByIdRoute() {
     var param1:String? = "";
-    get("/query/{lore}") {
+    get("/brief/{id}") {
         if (call.parameters["lore"] != null) {
             param1 = call.parameters["lore"]
-            println("in QueryRoutes.queryByIdRoute: " + param1.toString())
+            println("in QueryRoutes.statByIdRoute: " + param1.toString())
             call.respondText(param1.toString())
         }
     }
